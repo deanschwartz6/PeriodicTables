@@ -9,23 +9,21 @@ Back End Link: https://periodic-tables-back-end-dean.herokuapp.com/
 
 ## `/dashboard` And `/dashboard?date=YYYY-MM-DD` - Home Page
 
-This page displays the reservations for a specific date that aren't `completed` or `cancelled` as well as displaying all tables. The default date if no date is given is the current date.
+This page displays the reservations for a specific date as well as displaying all tables. The default date if no date is given is the current date.
 
-### `DashBoard` ScreenShot
-
-![Dashboard](./pictures/Dashboard.png)
+![Dashboard](./SS/dashboard.png)
 
 ## `/search`
 
 This page allows the user to search for a reservation by phone number either partial or full phone number then shows a list of matching reservations.
 
-### `Before` Search screenshot
+### Search Page Before Search
 
-![Search Before](./pictures/Search_before.png)
+![Search Before](./SS/pre-search.png)
 
-### `After` search screenshot
+### Search Page After Search
 
-![Search After](./pictures/Search_after.png)
+![Search After](./SS/post-search.png)
 
 ## `/reservations/new`
 
@@ -33,49 +31,49 @@ This route displays a form that allows the user to create a new reservation.
 
 Once a new reservation has been submitted successfully it will redirect to the dashboard/`date of new reservation` displaying the new reservation and all other reservations for that date.
 
-### `Before` Submit Screenshot
+### New Reservation Form Before Submit
 
-![New Reservation Before](./pictures/NewReservation_before.png)
+![New Reservation Before](./SS/new-reservation-form.png)
 
-### `After` Submit screenshot
+### Dashboard With New Reservation After Submit
 
-![New Reservation After](./pictures/NewReservation_after.png)
+![New Reservation After](./SS/dashboard-after-submit.png)
 
 ## `/reservations/:reservation_id/edit`
 
-This route is called by clicking `edit` on an existing reservation that has the status `booked` (no other status can be edited). Once edit is clicked it goes to a form identical to the new reservation form but with current values filled in. When successfully submitted the form redirects to the dashboard/`date of reservation`.
+This route is called by clicking edit on an existing reservation that has the status booked (no other status can be edited). Once edit is clicked it goes to a form identical to the new reservation form but with current values filled in. When successfully submitted the form redirects to the dashboard/`date of reservation`.
 
-### Dashboard `Edit Button` Screenshot
+### Edit Button Dashboard
 
-![Edit Reservation Button](./pictures/EditButton.png)
+![Edit Reservation Button](./SS/edit-button.png)
 
-### `Before` Submit Screenshot
+### Edit Reservation Before Submit
 
-![Edit Reservation Before](./pictures/EditReservation_before.png)
+![Edit Reservation Before](./SS/edit-reservation.png)
 
-### `After` Submit Screenshot
+### Dashboard After Submit
 
-![Edit Reservation After](./pictures/EditReservation_after.png)
+![Edit Reservation After](./SS/dashboard-after-edit.png)
 
 ## `/reservations/:reservation_id/seat`
 
-This route is called by clicking `seat` on an existing reservation that has the status `booked` (no other status can be seated). Displays a form to assign a reservation a table. After the form is successfully submitted it redirects to dashboard. After a table has been seated the table should show `Occupied` and display a `Finish` button that when clicked finishes the reservation (which hides the reservation) then changes table's status to `free`.
+This route is called by clicking seat on an existing reservation that has the status booked (no other status can be seated). Displays a form to assign a reservation a table. After the form is successfully submitted it redirects to dashboard. After a table has been seated the table should show occupied and display a finish button that when clicked finishes the reservation (which hides the reservation) then changes table's status to free.
 
-### Dashboard `Seat Button` screenshot
+### Seat Button Dashboard
 
-![Seat Button](./pictures/SeatButton.png)
+![Seat Button](./SS/seat-button.png)
 
-### `Before` Submit Screenshot
+### Seat Button Before Submit
 
-![Seat Before](./pictures/SeatFormBefore.png)
+![Seat Before](./SS/seat-before-submit.png)
 
-### `After` Submit Screenshot
+### Seat Button After Submit
 
-![Seat After](./pictures/SeatFormAfter.png)
+![Seat After](./SS/seat-after-submit.png)
 
-### `Finish button` Screenshot
+### Finish Button Dashboard
 
-![Seat After](./pictures/FinishButton.png)
+![Seat After](./SS/finish-button.png)
 
 ## `/tables/new`
 
@@ -83,13 +81,13 @@ This route displays a form to create a new table.
 
 Once a new table has been submitted successfully it will redirect to the dashboard/`current-date` displaying the new table .
 
-### `Before` submit Screenshot
+### New Table Before Submit
 
-![Table Before](./pictures/NewTableBefore.png)
+![Table Before](./SS/new-table-before-submit.png)
 
-### `After` submit Screenshot
+### Dashboard After Submit
 
-![Table After](./pictures/NewTableAfter.png)
+![Table After](./SS/new-table-after-submit.png)
 
 # API Documentation
 
@@ -111,19 +109,19 @@ Returns a list of reservations that at least partially match the number query.
 [
     {
         reservation_id: 22,
-        first_name: "Austin",
-        last_name: "Mckee",
-        mobile_number: "456-345-9999",
-        reservation_date: "2022-03-17",
+        first_name: "Dean",
+        last_name: "Schwartz",
+        mobile_number: "444-444-4444",
+        reservation_date: "2021-11-20",
         reservation_time: "12:30",
         people: 2,
         status: "booked"
     },
     {
         reservation_id: 23,
-        first_name: "Johnny",
-        last_name: "Appleseed",
-        mobile_number: "123-123-5689",
+        first_name: "John",
+        last_name: "Smith",
+        mobile_number: "123-456-7890",
         reservation_date: "2022-03-16",
         reservation_time: "21:00",
         people: 5,
@@ -140,9 +138,9 @@ A request body is needed for this route. The body of your request should look li
 request: {
     body: {
         data: {
-            first_name: "Billy",
-            last_name: "Madison",
-            mobile_number: "123-456-7890",
+            first_name: "Barry",
+            last_name: "Bonds",
+            mobile_number: "321-321-0215",
             reservation_date: "2025-06-25",
             reservation_time: "13:30",
             people: 4,
@@ -173,9 +171,9 @@ If the reservation defined in the request URL exists, it returns the reservation
 ```
 {
     reservation_id: 7,
-    first_name: "Austin",
-    last_name: "Mckee",
-    mobile_number: "777-888-9999",
+    first_name: "Crisitano",
+    last_name: "Ronaldo",
+    mobile_number: "998-561-5563",
     reservation_date: "2022-03-12",
     reservation_time: "11:30",
     people: 2,
@@ -189,9 +187,9 @@ A request body is needed. The body of the request should resemble:
 
 ```
 data: {
-    first_name: "Jane",
-    last_name: "Appleseed",
-    mobile_number: "123-123-1231",
+    first_name: "Jack",
+    last_name: "Black",
+    mobile_number: "223-321-0245",
     reservation_date: "2021-07-26",
     reservation_time: "18:00",
     people: 2,
@@ -228,14 +226,14 @@ Returns a list of all tables in the database.
 [
   {
     table_id: 12,
-    table_name: "Bar #4",
-    capacity: 3,
+    table_name: "Bar #1",
+    capacity: 2,
     reservation_id: null
   },
   {
     table_id: 13,
-    table_name: "Bar #5",
-    capacity: 3,
+    table_name: "Bar #2",
+    capacity: 4,
     reservation_id: 7
   },
   ...
@@ -274,7 +272,7 @@ Response looks like:
 data: {
     table_id: 12,
     table_name: "Bar #4",
-    capacity: 3,
+    capacity: 4,
     reservation_id: null
 }
 ```
@@ -301,8 +299,8 @@ Returns status 200 and the updated <i>reservation</i>, not the table.
 ```
 data: {
     reservation_id: 5,
-    first_name: "Michael",
-    last_name: "Scott,
+    first_name: "Jack",
+    last_name: "White",
     mobile_number: "981-123-4567",
     reservation_date: "2007-04-20",
     reservation_time: "18:00",
@@ -320,8 +318,8 @@ Returns status 200 and the updated reservation object associated with the change
 ```
 data: {
     reservation_id: 62,
-    first_name: "Walter",
-    last_name: "White",
+    first_name: "John",
+    last_name: "Smith",
     mobile_number: "505-737-4253",
     reservation_date: "2030-09-25",
     reservation_time: "14:00",
@@ -347,8 +345,8 @@ You must make a `.env` file in both the front-end and back-end directories.
 Load the back-end `.env` file with two environment variables with the values of your two database URLs like so:
 
 ```
-DATABASE_URL_DEVELOPMENT=development-data-base-url-goes-here
 DATABASE_URL_TEST=test-data-base-url-goes-here
+DATABASE_URL_DEVELOPMENT=development-data-base-url-goes-here
 ```
 
 In the front-end `.env` file, enter:
