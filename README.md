@@ -12,7 +12,7 @@ Back End
 
 ``/reservations``  
 Returns the list of reservations  
-
+  
 GET ``?date=YYYY-MM-DD``  
 Returns a list of reservations made for that date  
 Ex. ``?date=2026-12-30``  
