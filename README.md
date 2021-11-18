@@ -7,15 +7,15 @@ Front End
 Back End
 > https://periodic-tables-front-back-dean.herokuapp.com/
 
-# API Documentation
-### ``/reservations``
+# API Documentation  
+### ``/reservations``  
 
-``/reservations``
-Returns the list of reservations
+``/reservations``  
+Returns the list of reservations  
 
-GET ``?date=YYYY-MM-DD``
-Returns a list of reservations made for that date
-Ex. ``?date=2026-12-30``
+GET ``?date=YYYY-MM-DD``  
+Returns a list of reservations made for that date  
+Ex. ``?date=2026-12-30``  
 Returns:
   {"data":
       [
