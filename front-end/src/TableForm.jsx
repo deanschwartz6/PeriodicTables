@@ -26,8 +26,6 @@ export default function TableForm() {
 	const theSubmit = (event) => {
 		event.preventDefault();
 		const abortController = new AbortController();
-		// create these api / validate functions
-
 		if (tableValidator(formData, setError) && capacityChange) {
 			createTables(formData, abortController.signal)
 				.then(() => history.push(`/dashboard`))
