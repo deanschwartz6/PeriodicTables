@@ -5,7 +5,7 @@ This is an app for a mock company Periodic Tables. In is intended to be used by 
 # Links
 Front End Link: https://periodic-tables-front-end-dean.herokuapp.com/  
 Back End Link: https://periodic-tables-back-end-dean.herokuapp.com/  
-# React Application
+# Lets Get Into The App!
 
 ## `/dashboard` And `/dashboard?date=YYYY-MM-DD` - Home Page
 
