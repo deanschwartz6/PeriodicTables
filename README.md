@@ -73,7 +73,7 @@ This route is called by clicking seat on an existing reservation that has the st
 
 ### Finish Button Dashboard
 
-![Seat After](./SS/finish-button.png)
+![Seat After](./SS/finish_button.png)
 
 ## `/tables/new`
 
