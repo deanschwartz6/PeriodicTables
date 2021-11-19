@@ -4,6 +4,7 @@ import ErrorAlert from "./layout/ErrorAlert";
 import { listTables, getReservation, assignReservation } from "./utils/api";
 import { useRouteMatch } from "react-router-dom";
 import { assignValidator }  from "./utils/validate";
+
 export default function ReservationSeatForm() {
 	const [formData, setFormData] = useState({
 		table_name: "",
@@ -13,7 +14,6 @@ export default function ReservationSeatForm() {
 	const [reservation, setReservation] = useState({});
 	const theSubmit = (event) => {
 		event.preventDefault();
-
 		const abortController = new AbortController();
 		if (assignValidator(formData, reservation, setError)) {
 			assignReservation(
@@ -41,7 +41,6 @@ export default function ReservationSeatForm() {
 	const { params } = useRouteMatch();
 	const { reservation_id } = params;
 	const history = useHistory();
-
 	const [tables, setTables] = useState([]);
 	const [error, setError] = useState(null);
 	useEffect(
@@ -65,21 +64,17 @@ export default function ReservationSeatForm() {
 						value={[formData.table_name, formData.capacity, formData.table_id]}
 						className="form-control"
 						onChange={onChange}
-						required
-					>
+						required>
 						<option value={[null, null]}> Select Table </option>
 						{tables.map((table) => {
 							return (
-								<option
-									value={[table.table_name, table.capacity, table.table_id]}
-								>
+								<option value={[table.table_name, table.capacity, table.table_id]}>
 									{table.table_name} - {table.capacity}
 								</option>
 							);
 						})}
 					</select>
 				</div>
-
 				<button type="submit" className="btn btn-primary mr-1">
 					Submit
 				</button>

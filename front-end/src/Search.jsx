@@ -15,7 +15,6 @@ export default function Search() {
 	};
 	const theSubmit = (event) => {
 		event.preventDefault();
-
 		searchReservation(phoneNumber)
 			.then((data) => {
 				setReservations(data);
@@ -32,8 +31,8 @@ export default function Search() {
 					name="mobile_number"
 					placeholder="Enter a customer's phone number"
 					onChange={phoneChange}
-					value={phoneNumber}
-				></input>
+					value={phoneNumber}>
+				</input>
 				<button type="submit" className="btn btn-primary mt-2">
 					Find
 				</button>

@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-	createReservations,
-	getReservation,
-	updateReservation,
-} from "./utils/api";
+import { createReservations, getReservation, updateReservation } from "./utils/api";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import ErrorAlert from "./layout/ErrorAlert";
 
@@ -29,7 +25,6 @@ export default function ReservationForm() {
 			phoneNumber = mobileValidate(phoneNumber, formData.mobile_number.length);
 			event.target.value = phoneNumber;
 		}
-
 		changeObj[event.target.id] = event.target.value;
 		changeObj.people = Number(changeObj.people);
 		setFormData(changeObj);
@@ -117,8 +112,8 @@ export default function ReservationForm() {
 						value={formData.first_name}
 						placeholder="John"
 						className="form-control"
-						required
-					></input>
+						required>
+					</input>
 					<label htmlFor="last_name">Last Name</label>
 					<input
 						id="last_name"
@@ -128,8 +123,8 @@ export default function ReservationForm() {
 						value={formData.last_name}
 						placeholder="Smith"
 						className="form-control"
-						required
-					></input>
+						required>
+					</input>
 					<label htmlFor="mobile_number">Phone Number</label>
 					<input
 						id="mobile_number"
@@ -140,8 +135,8 @@ export default function ReservationForm() {
 						placeholder="xxx-xxx-xxxx or xxx-xxxx"
 						className="form-control"
 						pattern="([0-9]{3}-)?[0-9]{3}-[0-9]{4}"
-						required
-					></input>
+						required>
+					</input>
 					<label htmlFor="reservation_date">Reservation Date</label>
 					<input
 						id="reservation_date"
@@ -152,9 +147,7 @@ export default function ReservationForm() {
 						placeholder="YYYY-MM-DD"
 						pattern="\d{4}-\d{2}-\d{2}"
 						className="form-control"
-						required
-					/>
-
+						required/>
 					<label htmlFor="reservation_time">Reservation Time</label>
 					<input
 						id="reservation_time"
@@ -164,8 +157,7 @@ export default function ReservationForm() {
 						type="time"
 						placeholder="HH:MM"
 						pattern="[0-9]{2}:[0-9]{2}"
-						className="form-control"
-					/>
+						className="form-control"/>
 					<label htmlFor="people">Party Size</label>
 					<input
 						id="people"
@@ -175,8 +167,7 @@ export default function ReservationForm() {
 						type="number"
 						className="form-control"
 						min="1"
-						required
-					/>
+						required/>
 				</div>
 
 				<button type="submit" className="btn btn-primary mr-1">

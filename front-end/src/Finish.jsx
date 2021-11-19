@@ -1,11 +1,7 @@
 import { listTables, finishTable } from "./utils/api";
 export default function Finish({ tableId, setTables }) {
 	const clickHandler = (event) => {
-		if (
-			window.confirm(
-				"Is this table ready to seat new guests? This cannot be undone."
-			)
-		) {
+		if (window.confirm("Is this table ready to seat new guests? This cannot be undone.")) {
 			const abortController = new AbortController();
 			finishTable(tableId, abortController.signal)
 				.then(() => listTables().then(setTables))
@@ -16,8 +12,7 @@ export default function Finish({ tableId, setTables }) {
 		<button
 			className="btn btn-primary"
 			onClick={clickHandler}
-			data-table-id-finish={tableId}
-		>
+			data-table-id-finish={tableId}>
 			Finish
 		</button>
 	);

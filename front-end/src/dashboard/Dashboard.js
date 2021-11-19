@@ -22,13 +22,16 @@ function Dashboard({ date }) {
 	useEffect(() => {
 		if (!theDate) history.push(`/dashboard?date=${date}`);
 	}, [query, history, theDate, date]);
+
 	useEffect(loadDashboard, [date, history, theDate]);
+
 	useEffect(() => {
 		const abortController = new AbortController();
 		listReservations({ date }, abortController.signal)
 			.then(setReservations)
 			.catch(setReservationsError);
 	}, [tables, date]);
+
 	function loadDashboard() {
 		if (theDate !== date) {
 			history.push(`/dashboard?date=${date}`);
@@ -42,6 +45,7 @@ function Dashboard({ date }) {
 		listTables(abortController2.signal).then(setTables);
 		return () => abortController.abort();
 	}
+
 	function changeDateUrl(scalar) {
 		const temp = date.split("-");
 		const newDate = new Date(
@@ -53,6 +57,7 @@ function Dashboard({ date }) {
 			.split("T")[0];
 		history.push(`/dashboard?date=${newDate}`);
 	}
+	
 	return (
 		<main>
 			<h1>Dashboard</h1>

@@ -2,7 +2,6 @@ import { useHistory } from "react-router";
 import React, { useState } from "react";
 import ErrorAlert from "./layout/ErrorAlert";
 import { createTables } from "./utils/api";
-
 import { tableValidator }  from "./utils/validate";
 
 export default function TableForm() {
@@ -53,9 +52,8 @@ export default function TableForm() {
 						value={formData.table_name}
 						placeholder="Table Name"
 						className="form-control"
-						required
-					></input>
-
+						required>
+					</input>
 					<label htmlFor="capacity">Capacity</label>
 					<input
 						id="capacity"
@@ -65,10 +63,8 @@ export default function TableForm() {
 						type="number"
 						className="form-control"
 						min="1"
-						required
-					/>
+						required/>
 				</div>
-
 				<button type="submit" className="btn btn-primary mr-1">
 					Submit
 				</button>

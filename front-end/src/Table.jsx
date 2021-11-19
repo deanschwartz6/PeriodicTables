@@ -1,4 +1,5 @@
 import Finish from "./Finish";
+
 export default function Table({ data, setTables }) {
 	return (
 		<div className="card ">
@@ -11,11 +12,9 @@ export default function Table({ data, setTables }) {
 							? "card-text text-danger"
 							: "card-text text-success"
 					}
-					data-table-id-status={data.table_id}
-				>
+					data-table-id-status={data.table_id}>
 					{data.reservation_id ? "Occupied" : "Free"}
 				</p>
-
 				{data.reservation_id ? (
 					<Finish tableId={data.table_id} setTables={setTables} />
 				) : null}

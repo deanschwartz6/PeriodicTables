@@ -1,11 +1,7 @@
 import { assignStatus, listReservations } from "./utils/api";
 export default function Reservation({ data, setReservations, date }) {
 	function cancelReservation() {
-		if (
-			window.confirm(
-				"Do you want to cancel this reservation? This cannot be undone."
-			)
-		) {
+		if (window.confirm("Do you want to cancel this reservation? This cannot be undone.")) {
 			const abortController = new AbortController();
 			assignStatus(data.reservation_id, "cancelled")
 				.then((result) => {
@@ -32,8 +28,7 @@ export default function Reservation({ data, setReservations, date }) {
 							data.status === "booked"
 								? "card-text text-primary"
 								: "card-text text-success"
-						}
-					>
+						}>
 						{data.status}
 					</span>
 				</p>
@@ -41,22 +36,19 @@ export default function Reservation({ data, setReservations, date }) {
 					<div>
 						<a
 							href={`/reservations/${data.reservation_id}/seat`}
-							className="btn btn-primary mr-1"
-						>
+							className="btn btn-primary mr-1">
 							Seat
 						</a>
 						<a
 							href={`/reservations/${data.reservation_id}/edit`}
-							className="btn btn-secondary mr-1"
-						>
+							className="btn btn-secondary mr-1">
 							{" "}
 							Edit
 						</a>
 						<button
 							onClick={cancelReservation}
 							className="btn btn-danger "
-							data-reservation-id-cancel={data.reservation_id}
-						>
+							data-reservation-id-cancel={data.reservation_id}>
 							Cancel
 						</button>
 					</div>
