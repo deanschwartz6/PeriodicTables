@@ -40,9 +40,9 @@ export default function Search() {
 			{submit ? (
 				reservations.length ? (
 					<div>
-						{reservations.map((reservation) =>
+						{reservations.map((reservation, idx) =>
 							reservation.status === " finished" ? null : (
-								<Reservation data={reservation} />
+								<Reservation key={idx} data={reservation} />
 							)
 						)}
 					</div>

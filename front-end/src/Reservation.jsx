@@ -1,5 +1,5 @@
 import { assignStatus, listReservations } from "./utils/api";
-export default function Reservation({ data, setReservations, date }) {
+export default function Reservation({ data, setReservations, date, key }) {
 	function cancelReservation() {
 		if (window.confirm("Do you want to cancel this reservation? This cannot be undone.")) {
 			const abortController = new AbortController();
@@ -13,7 +13,7 @@ export default function Reservation({ data, setReservations, date }) {
 		}
 	}
 	return (
-		<div className="card ">
+		<div key={key} className="card ">
 			<div className="card-body">
 				<h5 className="card-title">
 					Reservation for: {`${data.first_name} ${data.last_name}`}{" "}

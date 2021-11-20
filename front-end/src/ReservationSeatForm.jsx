@@ -66,9 +66,9 @@ export default function ReservationSeatForm() {
 						onChange={onChange}
 						required>
 						<option value={[null, null]}> Select Table </option>
-						{tables.map((table) => {
+						{tables.map((table, idx) => {
 							return (
-								<option value={[table.table_name, table.capacity, table.table_id]}>
+								<option key={idx} value={[table.table_name, table.capacity, table.table_id]}>
 									{table.table_name} - {table.capacity}
 								</option>
 							);

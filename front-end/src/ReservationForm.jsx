@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { createReservations, getReservation, updateReservation } from "./utils/api";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import ErrorAlert from "./layout/ErrorAlert";
-
 import  {mobileValidate, theValidator}   from "./utils/validate";
+
 export default function ReservationForm() {
 	const history = useHistory();
 	const { params, url } = useRouteMatch();
@@ -61,9 +61,11 @@ export default function ReservationForm() {
 			}
 		}
 	};
+
 	useEffect(() => {
 		Object.keys(params).length ? setType("edit") : setType("new");
 	}, [history, params, url]);
+
 	useEffect(() => {
 		if (type === "edit") {
 			const abortController = new AbortController();
